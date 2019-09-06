@@ -7,16 +7,14 @@ import { Accordion } from './Accordion';
 
 const AccordionGroup = (props: AccordionGroupProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    classes,
-    onToggle,
-    rows,
-  } = componentProps;
+  const { classes, onToggle, rows } = componentProps;
 
-  const getOpenedAccordion = ():number => rows.findIndex(row => row.opened === true);
-  const getOpenedActions = ():number => rows.findIndex(row => row.showActions === true);
+  const getOpenedAccordion = (): number =>
+    rows.findIndex(row => row.opened === true);
+  const getOpenedActions = (): number =>
+    rows.findIndex(row => row.showActions === true);
 
-  const handleOnToggle = (index:number) => {
+  const handleOnToggle = (index: number) => {
     if (typeof onToggle === 'function') {
       const selectedIndex = getOpenedAccordion();
 
@@ -32,7 +30,7 @@ const AccordionGroup = (props: AccordionGroupProps) => {
     }
   };
 
-  const handleOnToggleActions = (index:number) => {
+  const handleOnToggleActions = (index: number) => {
     if (typeof onToggle === 'function') {
       const selectedIndex = getOpenedActions();
 
@@ -50,20 +48,20 @@ const AccordionGroup = (props: AccordionGroupProps) => {
 
   return (
     <React.Fragment>
-      { rows.map((row, index) =>
+      {rows.map((row, index) => (
         <Accordion
-          { ...row }
-          actions={ row.actions }
-          classes={ classes }
-          content={ row.content }
-          header={ row.header }
-          key={ index }
-          onToggle={ () => handleOnToggle(index) }
-          onToggleActions={ () => handleOnToggleActions(index) }
-          opened={ row.opened }
-          showActions={ row.showActions }
-        />,
-      ) }
+          {...row}
+          actions={row.actions}
+          classes={classes}
+          content={row.content}
+          header={row.header}
+          key={index}
+          onToggle={() => handleOnToggle(index)}
+          onToggleActions={() => handleOnToggleActions(index)}
+          opened={row.opened}
+          showActions={row.showActions}
+        />
+      ))}
     </React.Fragment>
   );
 };

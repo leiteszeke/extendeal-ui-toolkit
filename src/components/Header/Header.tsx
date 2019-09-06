@@ -21,15 +21,13 @@ import {
   Separator,
 } from './HeaderStyle';
 
-const Header = (props:HeaderProps) => {
+const Header = (props: HeaderProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     backgroundColor,
     breadcrumb,
     classes,
-    history: {
-      goBack,
-    },
+    history: { goBack },
     leftIcon,
     logoHeader,
     menuItems,
@@ -66,7 +64,7 @@ const Header = (props:HeaderProps) => {
     }
   };
 
-  const handleOnSearchChange = (value:string) => {
+  const handleOnSearchChange = (value: string) => {
     if (typeof onSearchChange === 'function') {
       onSearchChange(value);
     }
@@ -91,106 +89,92 @@ const Header = (props:HeaderProps) => {
   };
 
   return (
-    <HeaderWrapper
-      backgroundColor={ backgroundColor }
-      classes={ classes.wrapper }
-    >
-      <LeftNavbar
-        classes={ classes.leftNavbar }
-      >
-        { showBackButton === true &&
+    <HeaderWrapper backgroundColor={backgroundColor} classes={classes.wrapper}>
+      <LeftNavbar classes={classes.leftNavbar}>
+        {showBackButton === true && (
           <Back
-            backgroundColor={ 'transparent' }
-            fillColor={ Colors.White.level4 }
-            height={ 24 }
-            onClick={ handleGoBack }
-            width={ 24 }
+            backgroundColor={'transparent'}
+            fillColor={Colors.White.level4}
+            height={24}
+            onClick={handleGoBack}
+            width={24}
           />
-        }
+        )}
 
-        { showBackButton === false && typeof leftIcon !== 'undefined'
+        {showBackButton === false && typeof leftIcon !== 'undefined'
           ? leftIcon
-          : ''
-        }
+          : ''}
       </LeftNavbar>
 
-      { browser.isDesktop() === false && typeof breadcrumb !== 'undefined'
-        ? (
-          <Breadcrumb classes={ classes.breadcrumb }>
-            { breadcrumb }
-          </Breadcrumb>
-        )
-        : (
-          <Link classes={ classes.link } onClick={ handleLogoClick } >
-            { logoHeader }
-          </Link>
-        )
-      }
+      {browser.isDesktop() === false && typeof breadcrumb !== 'undefined' ? (
+        <Breadcrumb classes={classes.breadcrumb}>{breadcrumb}</Breadcrumb>
+      ) : (
+        <Link classes={classes.link} onClick={handleLogoClick}>
+          {logoHeader}
+        </Link>
+      )}
 
-      <RightNavbar classes={ classes.rightNavbar }>
-        { withSearch === true && (
+      <RightNavbar classes={classes.rightNavbar}>
+        {withSearch === true && (
           <MobileSearch
-            inputValue={ searchValue }
-            onChange={ handleOnSearchChange }
-            onClose={ handleOnSearchClose }
-            onDelete={ handleOnSearchDelete }
-            onOpen={ handleOnSearchOpen }
-            opened={ showSearch }
-            placeHolder={ searchPlaceholder }
+            inputValue={searchValue}
+            onChange={handleOnSearchChange}
+            onClose={handleOnSearchClose}
+            onDelete={handleOnSearchDelete}
+            onOpen={handleOnSearchOpen}
+            opened={showSearch}
+            placeHolder={searchPlaceholder}
           />
-        ) }
+        )}
 
-        { withUserPanel === true
-          ? (
-            <React.Fragment>
-              <IconWrapper
-                classes={ typeof classes.userPanel !== 'undefined'
+        {withUserPanel === true ? (
+          <React.Fragment>
+            <IconWrapper
+              classes={
+                typeof classes.userPanel !== 'undefined'
                   ? classes.userPanel.wrapper
                   : ''
-                }
-              >
-                <MoreVert
-                  backgroundColor={ 'transparent' }
-                  fillColor={ Colors.White.level4 }
-                  height={ 24 }
-                  onClick={ handleUserPanel }
-                  width={ 24 }
-                />
-              </IconWrapper>
+              }
+            >
+              <MoreVert
+                backgroundColor={'transparent'}
+                fillColor={Colors.White.level4}
+                height={24}
+                onClick={handleUserPanel}
+                width={24}
+              />
+            </IconWrapper>
 
-              <Dropdown
-                active={ showUserPanel }
-                classes={ typeof classes.userPanel !== 'undefined'
+            <Dropdown
+              active={showUserPanel}
+              classes={
+                typeof classes.userPanel !== 'undefined'
                   ? classes.userPanel.dropdown
                   : ''
-                }
-                withButton={ false }
-              >
-                { typeof menuItems !== 'undefined'
-                  ? menuItems.map(item => (
-                    item.isSeparator === true
-                      ? (
-                        <DropdownItem classes={ item.classes }>
-                          <Separator classe={ item.separatorClasses } />
-                        </DropdownItem>
-                      )
-                      : (
-                        <DropdownItem
-                          classes={ item.classes }
-                          onClick={ item.onClick }
-                        >
-                          { item.label }
-                        </DropdownItem>
-                      )
+              }
+              withButton={false}
+            >
+              {typeof menuItems !== 'undefined'
+                ? menuItems.map(item =>
+                    item.isSeparator === true ? (
+                      <DropdownItem classes={item.classes}>
+                        <Separator classe={item.separatorClasses} />
+                      </DropdownItem>
+                    ) : (
+                      <DropdownItem
+                        classes={item.classes}
+                        onClick={item.onClick}
+                      >
+                        {item.label}
+                      </DropdownItem>
                     ),
                   )
-                  : ''
-                }
-              </Dropdown>
-            </React.Fragment>
-          )
-          : ''
-        }
+                : ''}
+            </Dropdown>
+          </React.Fragment>
+        ) : (
+          ''
+        )}
       </RightNavbar>
     </HeaderWrapper>
   );

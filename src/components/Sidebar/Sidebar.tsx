@@ -14,7 +14,7 @@ import {
   BottomNavbar,
 } from './SidebarStyle';
 
-const Sidebar = (props:SidebarProps) => {
+const Sidebar = (props: SidebarProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     backgroundColor,
@@ -25,63 +25,58 @@ const Sidebar = (props:SidebarProps) => {
   } = componentProps;
 
   return (
-    <Wrapper
-      backgroundColor={ backgroundColor }
-      classes={ classes.wrapper }
-    >
-      <TopNavbar classes={ classes.topNavbar }>
-        <SidebarMenu classes={ classes.topSidebarMenu }>
-          { typeof topItems !== 'undefined'
+    <Wrapper backgroundColor={backgroundColor} classes={classes.wrapper}>
+      <TopNavbar classes={classes.topNavbar}>
+        <SidebarMenu classes={classes.topSidebarMenu}>
+          {typeof topItems !== 'undefined'
             ? topItems.map((item, index) => (
-              <MenuItem classes={ item.classes.menuItem } key={ index }>
-                { typeof item.element !== 'undefined'
-                  ? item.element
-                  : (
-                    <Link classes={ item.classes.link } onClick={ item.onClick }>
+                <MenuItem classes={item.classes.menuItem} key={index}>
+                  {typeof item.element !== 'undefined' ? (
+                    item.element
+                  ) : (
+                    <Link classes={item.classes.link} onClick={item.onClick}>
                       <IconButton
-                        backgroundColor={ item.color }
-                        classes={ item.classes.iconButton }
-                        icon={ currentSection === item.sectionId
-                          ? item.icon.active
-                          : item.icon.normal
+                        backgroundColor={item.color}
+                        classes={item.classes.iconButton}
+                        icon={
+                          currentSection === item.sectionId
+                            ? item.icon.active
+                            : item.icon.normal
                         }
-                        label={ item.label }
+                        label={item.label}
                       />
                     </Link>
-                  )
-                }
-              </MenuItem>
-            ))
-            : ''
-          }
+                  )}
+                </MenuItem>
+              ))
+            : ''}
         </SidebarMenu>
       </TopNavbar>
 
-      <BottomNavbar classes={ classes.bottomNavbar }>
-        <SidebarMenu classes={ classes.bottomSidebarMenu}>
-          { typeof bottomItems !== 'undefined'
+      <BottomNavbar classes={classes.bottomNavbar}>
+        <SidebarMenu classes={classes.bottomSidebarMenu}>
+          {typeof bottomItems !== 'undefined'
             ? bottomItems.map((item, index) => (
-              <MenuItem classes={ item.classes.menuItem } key={ index }>
-                { typeof item.element !== 'undefined'
-                  ? item.element
-                  : (
-                    <Link classes={ item.classes.link } onClick={ item.onClick }>
+                <MenuItem classes={item.classes.menuItem} key={index}>
+                  {typeof item.element !== 'undefined' ? (
+                    item.element
+                  ) : (
+                    <Link classes={item.classes.link} onClick={item.onClick}>
                       <IconButton
-                        backgroundColor={ item.color }
-                        classes={ item.classes.iconButton }
-                        icon={ currentSection === item.sectionId
-                          ? item.icon.active
-                          : item.icon.normal
+                        backgroundColor={item.color}
+                        classes={item.classes.iconButton}
+                        icon={
+                          currentSection === item.sectionId
+                            ? item.icon.active
+                            : item.icon.normal
                         }
-                        label={ item.label }
+                        label={item.label}
                       />
                     </Link>
-                  )
-                }
-              </MenuItem>
-            ))
-            : ''
-          }
+                  )}
+                </MenuItem>
+              ))
+            : ''}
         </SidebarMenu>
       </BottomNavbar>
     </Wrapper>

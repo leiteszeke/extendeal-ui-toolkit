@@ -6,15 +6,9 @@ import { SvgElement } from './IconStyle';
 import { IconProps, defaultProps } from './IconProps';
 import { White } from '../Colors/Acromathic/White';
 
-const Search = (props:IconProps) => {
+const Search = (props: IconProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    backgroundColor,
-    fillColor,
-    height,
-    onClick,
-    width,
-  } = componentProps;
+  const { backgroundColor, fillColor, height, onClick, width } = componentProps;
 
   const handleClick = () => {
     if (typeof onClick === 'function') {
@@ -24,11 +18,11 @@ const Search = (props:IconProps) => {
 
   return (
     <SvgElement
-      height={ height }
-      onClick={ handleClick }
+      height={height}
+      onClick={handleClick}
       preserveAspectRatio="none"
       viewBox="0 0 24 24"
-      width={ width }
+      width={width}
     >
       <path
         d="
@@ -40,11 +34,11 @@ const Search = (props:IconProps) => {
           l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5
           S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z
         "
-        fill={ fillColor }
+        fill={fillColor}
       />
       <path
         d="M0 0h24v24H0z"
-        fill={ backgroundColor === White.level4 ? 'none' : backgroundColor }
+        fill={backgroundColor === White.level4 ? 'none' : backgroundColor}
       />
     </SvgElement>
   );

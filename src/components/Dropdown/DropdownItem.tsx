@@ -5,17 +5,11 @@ import { DropdownItemProps, defaultProps } from './DropdownItemProps';
 // Styled
 import { Item, Separator } from './DropdownItemStyle';
 
-const DropdownItem = (props:DropdownItemProps) => {
+const DropdownItem = (props: DropdownItemProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    children,
-    classes,
-    color,
-    onClick,
-    separator,
-  } = componentProps;
+  const { children, classes, color, onClick, separator } = componentProps;
 
-  const handleOnClick:Function = ():void => {
+  const handleOnClick: Function = (): void => {
     if (typeof onClick === 'function') {
       onClick();
     }
@@ -23,19 +17,15 @@ const DropdownItem = (props:DropdownItemProps) => {
 
   if (typeof separator !== 'undefined') {
     return (
-      <Item color={ color }>
-        <Separator classses={ classes.separator } />
+      <Item color={color}>
+        <Separator classses={classes.separator} />
       </Item>
     );
   }
 
   return (
-    <Item
-      classes={ classes.item }
-      color={ color }
-      onClick={ handleOnClick }
-    >
-      { children }
+    <Item classes={classes.item} color={color} onClick={handleOnClick}>
+      {children}
     </Item>
   );
 };

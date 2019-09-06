@@ -9,7 +9,7 @@ import { SingleDialog } from '../SingleDialog/SingleDialog';
 import { CheckboxProps } from './CheckboxProps';
 import { CheckboxListProps, defaultProps } from './CheckboxListProps';
 
-const CheckboxList = (props:CheckboxListProps) => {
+const CheckboxList = (props: CheckboxListProps) => {
   const {
     classes,
     dialog,
@@ -34,9 +34,10 @@ const CheckboxList = (props:CheckboxListProps) => {
 
   const handleClick = (index: number | string) => () => {
     if (typeof onClick === 'function') {
-
       if (index === 'all') {
-        const linkeds = items.filter((item:CheckboxProps) => item.linked === true);
+        const linkeds = items.filter(
+          (item: CheckboxProps) => item.linked === true,
+        );
 
         if (linkeds.length > 0) {
           handleDelink(index);
@@ -45,7 +46,7 @@ const CheckboxList = (props:CheckboxListProps) => {
 
         const checkValue = !calculateCheckValue();
 
-        items.forEach((item:CheckboxProps) => {
+        items.forEach((item: CheckboxProps) => {
           item.checked = checkValue;
         });
       } else {
@@ -62,8 +63,10 @@ const CheckboxList = (props:CheckboxListProps) => {
   };
 
   const calculateCheckValue = () => {
-    return items.some((item:CheckboxProps) => item.checked === false) === false
-    && items.some((item:CheckboxProps) => item.checked === true) === true;
+    return (
+      items.some((item: CheckboxProps) => item.checked === false) === false &&
+      items.some((item: CheckboxProps) => item.checked === true) === true
+    );
   };
 
   const handleOnConfirm = () => {
@@ -74,7 +77,7 @@ const CheckboxList = (props:CheckboxListProps) => {
       } else if (dialog.selected === 'all') {
         const checkValue = !calculateCheckValue();
 
-        items.forEach((item:CheckboxProps) => {
+        items.forEach((item: CheckboxProps) => {
           item.checked = checkValue;
           item.linked = false;
         });
@@ -104,43 +107,43 @@ const CheckboxList = (props:CheckboxListProps) => {
 
   return (
     <React.Fragment>
-      { showAll === true &&
+      {showAll === true && (
         <Checkbox
-          checked={ calculateCheckValue() }
-          classes={ classes.showAll }
-          key={ -1 }
-          name={ name }
-          label={ i18n.translate('words.all') }
-          linkable={ false }
-          linked={ false }
-          onClick={ handleClick('all') }
-          value={ 'all' }
+          checked={calculateCheckValue()}
+          classes={classes.showAll}
+          key={-1}
+          name={name}
+          label={i18n.translate('words.all')}
+          linkable={false}
+          linked={false}
+          onClick={handleClick('all')}
+          value={'all'}
         />
-      }
+      )}
 
-      { items.map((item:CheckboxProps, index:number) =>
+      {items.map((item: CheckboxProps, index: number) => (
         <Checkbox
-          checked={ item.checked }
-          classes={ item.classes }
-          key={ index }
-          name={ item.name }
-          label={ item.label }
-          linkable={ linkable }
-          linked={ item.linked }
-          onClick={ handleClick(index) }
-          value={ item.value }
-        />,
-      ) }
+          checked={item.checked}
+          classes={item.classes}
+          key={index}
+          name={item.name}
+          label={item.label}
+          linkable={linkable}
+          linked={item.linked}
+          onClick={handleClick(index)}
+          value={item.value}
+        />
+      ))}
 
-      { typeof dialog !== 'undefined' &&
+      {typeof dialog !== 'undefined' && (
         <SingleDialog
-          classes={ dialog.classes }
-          footerButtons={ dialog.footerButtons }
-          text={ dialog.text }
-          title={ dialog.title }
-          show={ dialog.show }
+          classes={dialog.classes}
+          footerButtons={dialog.footerButtons}
+          text={dialog.text}
+          title={dialog.title}
+          show={dialog.show}
         />
-      }
+      )}
     </React.Fragment>
   );
 };

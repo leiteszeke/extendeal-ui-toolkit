@@ -15,5 +15,5 @@ export const defaultProps = {
     wrapper: '',
   },
   items: [],
-  name: `Radio_${ new Date().getMilliseconds() }`,
+  name: `Radio_${new Date().getMilliseconds()}`,
 };

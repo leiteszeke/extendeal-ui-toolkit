@@ -6,15 +6,9 @@ import { SvgElement } from './IconStyle';
 import { IconProps, defaultProps } from './IconProps';
 import { White } from '../Colors/Acromathic/White';
 
-const CheckBoxOff = (props:IconProps) => {
+const CheckBoxOff = (props: IconProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    backgroundColor,
-    fillColor,
-    height,
-    onClick,
-    width,
-  } = componentProps;
+  const { backgroundColor, fillColor, height, onClick, width } = componentProps;
 
   const handleClick = () => {
     if (typeof onClick === 'function') {
@@ -24,11 +18,11 @@ const CheckBoxOff = (props:IconProps) => {
 
   return (
     <SvgElement
-      height={ height }
-      onClick={ handleClick }
+      height={height}
+      onClick={handleClick}
       preserveAspectRatio="none"
       viewBox="0 0 24 24"
-      width={ width }
+      width={width}
     >
       <path
         d="
@@ -38,11 +32,11 @@ const CheckBoxOff = (props:IconProps) => {
           h14c1.1 0 2-.9 2-2
           V5c0-1.1-.9-2-2-2z
         "
-        fill={ fillColor }
+        fill={fillColor}
       />
       <path
         d="M0 0h24v24H0z"
-        fill={ backgroundColor === White.level4 ? 'none' : backgroundColor }
+        fill={backgroundColor === White.level4 ? 'none' : backgroundColor}
       />
     </SvgElement>
   );

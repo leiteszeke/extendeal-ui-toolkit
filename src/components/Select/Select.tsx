@@ -17,7 +17,7 @@ import {
 import { ArrowDown } from '../Icons/ArrowDown';
 import { ArrowUp } from '../Icons/ArrowUp';
 
-const Select = (props:SelectProps) => {
+const Select = (props: SelectProps) => {
   const {
     autoHide,
     classes,
@@ -30,7 +30,7 @@ const Select = (props:SelectProps) => {
     selected,
   } = objects.extend(defaultProps, props);
 
-  const handleOnSelect = (item:SelectOptionProps) => () => {
+  const handleOnSelect = (item: SelectOptionProps) => () => {
     if (typeof onSelect === 'function') {
       onSelect(name, item);
 
@@ -47,89 +47,77 @@ const Select = (props:SelectProps) => {
   };
 
   return (
-    <Wrapper classes={ classes.wrapper }>
-      <Input
-        classes={ classes.input }
-        onClick={ handleToggle }
-      >
-        { typeof placeHolder !== 'undefined' &&
+    <Wrapper classes={classes.wrapper}>
+      <Input classes={classes.input} onClick={handleToggle}>
+        {typeof placeHolder !== 'undefined' && (
           <Label
-            classes={ classnames(
+            classes={classnames(
               {
                 'option-selected': selected !== false,
               },
               classes.label,
-            ) }
+            )}
           >
-            { placeHolder }
+            {placeHolder}
           </Label>
-        }
+        )}
 
-        { selected !== false &&
-          <Option
-            classes={ classnames(
-              'option-selected',
-              classes.selected,
-            ) }
-          >
-            { selected.label }
+        {selected !== false && (
+          <Option classes={classnames('option-selected', classes.selected)}>
+            {selected.label}
           </Option>
-        }
+        )}
 
-        { opened === false
-          ? (
-            <ArrowDown
-              height={ 9 }
-              style={{
-                right: 8,
-                position: 'absolute',
-                top: 32,
-              }}
-              width={ 9 }
-            />
-          )
-          : (
-            <ArrowUp
-              height={ 9 }
-              style={{
-                right: 8,
-                position: 'absolute',
-                top: 32,
-              }}
-              width={ 9 }
-            />
-          )
-        }
+        {opened === false ? (
+          <ArrowDown
+            height={9}
+            style={{
+              right: 8,
+              position: 'absolute',
+              top: 32,
+            }}
+            width={9}
+          />
+        ) : (
+          <ArrowUp
+            height={9}
+            style={{
+              right: 8,
+              position: 'absolute',
+              top: 32,
+            }}
+            width={9}
+          />
+        )}
       </Input>
 
-      { opened === true &&
-        <Options classes={ classes.options }>
-          { typeof items !== 'undefined' && items.map((item:SelectOptionProps) => (
-            <Option
-              classes={ classnames(
-                {
-                  selected: item.selected || selected.value === item.value,
-                },
-                typeof item.classes !== 'undefined'
-                  ? item.classes.option
-                  : '',
-              ) }
-              key={ item.value }
-              onClick={ handleOnSelect(item) }
-            >
-              <OptionLabel
-                classes={
-                  typeof item.classes !== 'undefined'
-                    ? item.classes.label
-                    : ''
-                }
+      {opened === true && (
+        <Options classes={classes.options}>
+          {typeof items !== 'undefined' &&
+            items.map((item: SelectOptionProps) => (
+              <Option
+                classes={classnames(
+                  {
+                    selected: item.selected || selected.value === item.value,
+                  },
+                  typeof item.classes !== 'undefined' ? item.classes.option : '',
+                )}
+                key={item.value}
+                onClick={handleOnSelect(item)}
               >
-                { item.label }
-              </OptionLabel>
-            </Option>
-          )) }
+                <OptionLabel
+                  classes={
+                    typeof item.classes !== 'undefined'
+                      ? item.classes.label
+                      : ''
+                  }
+                >
+                  {item.label}
+                </OptionLabel>
+              </Option>
+            ))}
         </Options>
-      }
+      )}
     </Wrapper>
   );
 };

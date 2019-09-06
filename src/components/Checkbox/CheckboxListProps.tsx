@@ -22,9 +22,7 @@ export const defaultProps = {
     show: false,
   },
   classes: {
-    showAll: {
-
-    },
+    showAll: {},
   },
   linkable: false,
 };

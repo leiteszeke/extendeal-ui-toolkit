@@ -13,7 +13,7 @@ import { Gray } from '../Colors/Acromathic/Gray';
 import { Link } from '../Icons/Link';
 import { Milhouse } from '../Colors/Primary/Milhouse';
 
-const Checkbox = (props:CheckboxProps) => {
+const Checkbox = (props: CheckboxProps) => {
   const {
     checked,
     classes,
@@ -37,44 +37,42 @@ const Checkbox = (props:CheckboxProps) => {
 
   return (
     <Wrapper
-      classes={
-        classnames(
-          {
-            disabled,
-          },
-          classes.wrapper,
-        )
-      }
-      onClick={ handleClick }
+      classes={classnames(
+        {
+          disabled,
+        },
+        classes.wrapper,
+      )}
+      onClick={handleClick}
     >
-      <Icon classes={ classes.check }>
-        { checked === true &&
+      <Icon classes={classes.check}>
+        {checked === true && (
           <CheckBoxOn
-            fillColor={ disabled === true ? Gray.S500 : Milhouse.Mi400 }
-            height={ height }
-            width={ width }
+            fillColor={disabled === true ? Gray.S500 : Milhouse.Mi400}
+            height={height}
+            width={width}
           />
-        }
+        )}
 
-        { checked === false &&
+        {checked === false && (
           <CheckBoxOff
-            fillColor={ disabled === true ? Gray.S500 : Gray.S800 }
-            height={ height }
-            width={ width }
+            fillColor={disabled === true ? Gray.S500 : Gray.S800}
+            height={height}
+            width={width}
           />
-        }
+        )}
       </Icon>
-      <Content classes={ classes.content }>
-        <Label classes={ classes.label }>{ label }</Label>
+      <Content classes={classes.content}>
+        <Label classes={classes.label}>{label}</Label>
       </Content>
 
-      { linkable === true &&
-        <Icon classes={ classes.icon }>
-          { linked === true &&
-            <Link fillColor={ Gray.S700 } height={ height } width={ width } />
-          }
+      {linkable === true && (
+        <Icon classes={classes.icon}>
+          {linked === true && (
+            <Link fillColor={Gray.S700} height={height} width={width} />
+          )}
         </Icon>
-      }
+      )}
     </Wrapper>
   );
 };

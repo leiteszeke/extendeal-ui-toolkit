@@ -6,7 +6,7 @@ import { Container } from './SpinnerStyle';
 // Props
 import { SpinnerProps, defaultProps } from './SpinnerProps';
 
-const Spinner = (props:SpinnerProps) => {
+const Spinner = (props: SpinnerProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     classes,
@@ -18,25 +18,22 @@ const Spinner = (props:SpinnerProps) => {
   } = componentProps;
 
   if (loading === false) {
-    return <Container classes={ classes } />;
+    return <Container classes={classes} />;
   }
 
   return (
     <Container
-      style={ style }
-      classes={ classnames(
-        classes,
-        {
-          'Spinner-loading': loading === true,
-          'Spinner-horizontal': loading === true && horizontal === true,
-          'Spinner-relative': relative === true,
-        },
-      ) }
+      style={style}
+      classes={classnames(classes, {
+        'Spinner-loading': loading === true,
+        'Spinner-horizontal': loading === true && horizontal === true,
+        'Spinner-relative': relative === true,
+      })}
     >
       <div className="Spinner__wrapper">
         <div className="Spinner__spinner-wrapper">
           <svg className="Spinner__spinner" viewBox="25 25 50 50">
-            <circle className="Spinner__wheel" cx="50" cy="50" r="20"/>
+            <circle className="Spinner__wheel" cx="50" cy="50" r="20" />
             <circle
               className="Spinner__arc"
               cx="50"
@@ -48,7 +45,7 @@ const Spinner = (props:SpinnerProps) => {
             />
           </svg>
         </div>
-        <span className="Spinner__message">{ title }</span>
+        <span className="Spinner__message">{title}</span>
       </div>
     </Container>
   );

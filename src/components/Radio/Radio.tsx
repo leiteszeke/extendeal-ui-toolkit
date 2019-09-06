@@ -12,7 +12,7 @@ import { Milhouse } from '../Colors/Primary/Milhouse';
 import { RadioOff } from '../Icons/RadioOff';
 import { RadioOn } from '../Icons/RadioOn';
 
-const Radio = (props:RadioProps) => {
+const Radio = (props: RadioProps) => {
   const {
     checked,
     classes,
@@ -34,35 +34,33 @@ const Radio = (props:RadioProps) => {
 
   return (
     <Wrapper
-      classes={
-        classnames(
-          {
-            disabled,
-          },
-          classes.wrapper,
-        )
-      }
-      onClick={ handleClick }
+      classes={classnames(
+        {
+          disabled,
+        },
+        classes.wrapper,
+      )}
+      onClick={handleClick}
     >
-      <Icon classes={ classes.icon }>
-        { checked === true &&
+      <Icon classes={classes.icon}>
+        {checked === true && (
           <RadioOn
-            fillColor={ disabled === true ? Gray.S500 : Milhouse.Mi400 }
-            height={ height }
-            width={ width }
+            fillColor={disabled === true ? Gray.S500 : Milhouse.Mi400}
+            height={height}
+            width={width}
           />
-        }
+        )}
 
-        { checked === false &&
+        {checked === false && (
           <RadioOff
-            fillColor={ disabled === true ? Gray.S500 : Gray.S800 }
-            height={ height }
-            width={ width }
+            fillColor={disabled === true ? Gray.S500 : Gray.S800}
+            height={height}
+            width={width}
           />
-        }
+        )}
       </Icon>
-      <Content classes={ classes.content }>
-        <Label classes={ classes.label }>{ label }</Label>
+      <Content classes={classes.content}>
+        <Label classes={classes.label}>{label}</Label>
       </Content>
     </Wrapper>
   );

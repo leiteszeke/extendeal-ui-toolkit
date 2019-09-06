@@ -9,7 +9,7 @@ import { utils } from '@extendeal/ext-commons';
 export const Wrapper = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
-  background: ${ White.level4 };
+  background: ${White.level4};
   display: none;
   flex-wrap: nowrap;
   height: 56px;
@@ -26,7 +26,7 @@ export const Wrapper = styledComponents<any>('div').attrs(props => ({
 export const Overlay = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
-  background: ${ utils.colorWithOpacity(Gray.S800, 0.3) };
+  background: ${utils.colorWithOpacity(Gray.S800, 0.3)};
   display: none;
   height: calc(100% - 56px);
   position: fixed;
@@ -65,7 +65,7 @@ export const Input = styledComponents<any>('input').attrs(props => ({
 }))`
   animation: slide-left 0.2s ease;
   border: none;
-  color: ${ Gray.S800 };
+  color: ${Gray.S800};
   display: flex;
   flex: 1;
   font-family: 'Source Sans Pro';
@@ -73,7 +73,7 @@ export const Input = styledComponents<any>('input').attrs(props => ({
   outline: none;
 
   &::placeholder {
-    color: ${ Gray.S500 };
+    color: ${Gray.S500};
   }
 `;
 

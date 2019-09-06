@@ -12,8 +12,8 @@ export const Wrapper = styledComponents<any>('div').attrs(props => ({
 }))`
   align-items: center;
   border-radius: 4px;
-  box-shadow: ${ Shadow.level2 };
-  color: ${ Gray.S800 };
+  box-shadow: ${Shadow.level2};
+  color: ${Gray.S800};
   display: flex;
   flex-wrap: nowrap;
   height: 60px;
@@ -25,13 +25,13 @@ export const Wrapper = styledComponents<any>('div').attrs(props => ({
   }
 
   &.error {
-    background: ${ Mario.Ma400 };
-    color: ${ White.level4 };
+    background: ${Mario.Ma400};
+    color: ${White.level4};
   }
 
   &.warning {
-    background: ${ Garfield.G600 };
-    color: ${ White.level4 };
+    background: ${Garfield.G600};
+    color: ${White.level4};
   }
 `;
 

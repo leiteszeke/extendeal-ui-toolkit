@@ -5,7 +5,7 @@ import { utils } from '@extendeal/ext-commons';
 import { Colors } from '../Colors/Colors';
 
 // Default Style
-export const defaultStyle =  {
+export const defaultStyle = {
   icon: {
     background: Colors.Garfield.G500,
     border: Colors.Garfield.G500,
@@ -29,7 +29,7 @@ export const Wrapper = styledComponents<any>('section').attrs(props => ({
   display: flex;
   height: 28px;
   min-width: 118px;
-  width: ${ props => props.datepickerStyle.datepickerWidth };
+  width: ${props => props.datepickerStyle.datepickerWidth};
   color: ${Colors.Gray.S800};
   cursor: pointer;
   position: relative;
@@ -40,7 +40,7 @@ export const Wrapper = styledComponents<any>('section').attrs(props => ({
 
   .react-datepicker__helperText {
     position: absolute;
-    color: ${ props => props.datepickerStyle.helperTextColor };
+    color: ${props => props.datepickerStyle.helperTextColor};
     left: 8px;
 
     &.down {
@@ -62,7 +62,7 @@ export const Wrapper = styledComponents<any>('section').attrs(props => ({
   &.hasError {
     & div,
     & article {
-      border-color: ${ props => props.datepickerStyle.borderError };
+      border-color: ${props => props.datepickerStyle.borderError};
     }
   }
 
@@ -530,8 +530,7 @@ export const Wrapper = styledComponents<any>('section').attrs(props => ({
         }
       }
     }
-  `
-;
+  `;
 
 export const HeaderMessage = styledComponents<any>('article').attrs(props => ({
   className: props.classes,
@@ -565,12 +564,12 @@ export const WrapperIcon = styledComponents<any>('article').attrs(props => ({
 }))`
   font-family: 'Source Sans Pro', sans-serif;
   min-height: 26px;
-  min-width: ${ props => props.datepickerStyle.widthDesktop };
+  min-width: ${props => props.datepickerStyle.widthDesktop};
   display: flex;
-  width: ${ props => props.datepickerStyle.widthDesktop };
-  background: ${ props => props.datepickerStyle.background };
+  width: ${props => props.datepickerStyle.widthDesktop};
+  background: ${props => props.datepickerStyle.background};
   border-radius: 5px 0 0 5px;
-  border: 1px solid  ${ props => props.datepickerStyle.border };
+  border: 1px solid  ${props => props.datepickerStyle.border};
   border-right: none;
   height: 24px;
   align-items: center;
@@ -578,7 +577,7 @@ export const WrapperIcon = styledComponents<any>('article').attrs(props => ({
 
   @media (max-width: 1024px) {
     height: 34px;
-    min-width: ${ props => props.datepickerStyle.widthMobile };
-    width: ${ props => props.datepickerStyle.widthMobile };
+    min-width: ${props => props.datepickerStyle.widthMobile};
+    width: ${props => props.datepickerStyle.widthMobile};
   }
 `;

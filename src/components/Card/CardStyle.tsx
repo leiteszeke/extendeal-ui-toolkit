@@ -11,7 +11,7 @@ export const Wrapper = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
   border-radius: 4px;
-  box-shadow: ${ Shadow.level1 };
+  box-shadow: ${Shadow.level1};
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
@@ -32,7 +32,7 @@ export const Body = styledComponents<any>('div').attrs(props => ({
 export const Name = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S900 };
+  color: ${Gray.S900};
   font-family: 'Source Sans Pro';
   font-size: 20px;
   font-weight: 400;
@@ -43,7 +43,7 @@ export const Name = styledComponents<any>('p').attrs(props => ({
 export const Role = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S700 };
+  color: ${Gray.S700};
   font-family: 'Source Sans Pro';
   font-size: 14px;
   font-weight: 400;
@@ -54,7 +54,7 @@ export const Role = styledComponents<any>('p').attrs(props => ({
 export const Email = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S800 };
+  color: ${Gray.S800};
   font-family: 'Source Sans Pro';
   font-size: 16px;
   font-weight: 400;
@@ -70,7 +70,7 @@ export const Email = styledComponents<any>('p').attrs(props => ({
 export const Phone = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S800 };
+  color: ${Gray.S800};
   font-family: 'Source Sans Pro';
   font-size: 16px;
   font-weight: 400;
@@ -81,7 +81,7 @@ export const Thumbnail = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
   align-items: center;
-  background-color: ${ utils.colorWithOpacity(Garfield.G900, 0.4) };
+  background-color: ${utils.colorWithOpacity(Garfield.G900, 0.4)};
   border-radius: 0 4px 4px 0;
   box-sizing: border-box;
   display: flex;

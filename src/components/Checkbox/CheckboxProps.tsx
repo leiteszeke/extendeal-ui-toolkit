@@ -29,5 +29,5 @@ export const defaultProps = {
   checked: false,
   disabled: false,
   label: 'Checkbox',
-  name: `Checkbox_${ new Date().getMilliseconds() }`,
+  name: `Checkbox_${new Date().getMilliseconds()}`,
 };

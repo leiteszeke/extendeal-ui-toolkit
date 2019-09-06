@@ -5,15 +5,9 @@ import { SvgElement } from './IconStyle';
 // Props
 import { IconProps, defaultProps } from './IconProps';
 
-const MoreVert = (props:IconProps) => {
+const MoreVert = (props: IconProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    backgroundColor,
-    fillColor,
-    height,
-    onClick,
-    width,
-  } = componentProps;
+  const { backgroundColor, fillColor, height, onClick, width } = componentProps;
 
   const handleClick = () => {
     if (typeof onClick === 'function') {
@@ -23,15 +17,15 @@ const MoreVert = (props:IconProps) => {
 
   return (
     <SvgElement
-      height={ height }
-      onClick={ handleClick }
+      height={height}
+      onClick={handleClick}
       preserveAspectRatio="none"
       viewBox="0 0 24 24"
-      width={ width }
+      width={width}
     >
-      <path fill={ backgroundColor } d="M0 0h24v24H0z" />
+      <path fill={backgroundColor} d="M0 0h24v24H0z" />
       <path
-        fill={ fillColor }
+        fill={fillColor}
         d="
           M12 8
           c1.1 0 2-.9 2-2

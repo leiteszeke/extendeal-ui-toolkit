@@ -7,26 +7,26 @@ import { Milhouse } from '../Colors/Primary/Milhouse';
 import { Garfield } from '../Colors/Institutional/Garfield';
 
 export const Wrapper = styledComponents<any>('div')`
-  background: ${ Beavis.B800 };
-  color: ${ White.level4 };
+  background: ${Beavis.B800};
+  color: ${White.level4};
   display: flex;
   font-family: monospace;
   font-size: 10px;
 
   .boolean,
   .number {
-    color: ${ Milhouse.Mi600 };
+    color: ${Milhouse.Mi600};
   }
 
   .string {
-    color: ${ Garfield.G800 };
+    color: ${Garfield.G800};
   }
 `;
 
 export const NumberColumn = styledComponents<any>('div').attrs(props => ({
   dangerouslySetInnerHTML: { __html: props.content },
 }))`
-  background: ${ Beavis.B900 };
+  background: ${Beavis.B900};
   padding: 11px 0;
   width: 24px;
 

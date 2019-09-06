@@ -5,7 +5,7 @@ import { Colors } from '../Colors/Colors';
 import { Shadow } from '../Shadow/Shadow';
 
 export const Wrapper = styledComponents<any>('div')`
-  background: ${ Colors.White.level4 };
+  background: ${Colors.White.level4};
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -17,7 +17,7 @@ export const Wrapper = styledComponents<any>('div')`
 `;
 
 export const Box = styledComponents<any>('div')`
-  box-shadow: ${ Shadow.level1 };
+  box-shadow: ${Shadow.level1};
   box-sizing: border-box;
   display: flex;
   flex-wrap: wrap;
@@ -67,10 +67,10 @@ export const Description = styledComponents<any>('p')`
 
 export const HowToUse = styledComponents<any>('div')`
   align-items: center;
-  background: ${ Colors.White.level4 };
+  background: ${Colors.White.level4};
   box-sizing: border-box;
-  box-shadow: ${ Shadow.level1 };
-  color: ${ Colors.Milhouse.Mi500 };
+  box-shadow: ${Shadow.level1};
+  color: ${Colors.Milhouse.Mi500};
   display: flex;
   height: 50px;
   margin-bottom: 20px;
@@ -78,16 +78,16 @@ export const HowToUse = styledComponents<any>('div')`
   width: 100%;
 
   .name {
-    color: ${ Colors.Gray.S800 };
+    color: ${Colors.Gray.S800};
   }
 
   .library {
-    color: ${ Colors.Mario.Ma500 };
+    color: ${Colors.Mario.Ma500};
   }
 `;
 
 export const TableHead = styledComponents<any>('div')`
-  border-bottom: 1px solid ${ Colors.Gray.S700 };
+  border-bottom: 1px solid ${Colors.Gray.S700};
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
@@ -133,7 +133,7 @@ export const TableHead = styledComponents<any>('div')`
 `;
 
 export const TableRow = styledComponents<any>('div')`
-  border-bottom: 1px solid ${ Colors.Gray.S700 };
+  border-bottom: 1px solid ${Colors.Gray.S700};
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;

@@ -10,7 +10,7 @@ import { White } from '../Colors/Acromathic/White';
 export const Overlay = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
-  background: ${ utils.colorWithOpacity(Black.level4, 0.2) };
+  background: ${utils.colorWithOpacity(Black.level4, 0.2)};
   height: 100%;
   position: absolute;
   top: 0;
@@ -21,9 +21,9 @@ export const Overlay = styledComponents<any>('div').attrs(props => ({
 export const Wrapper = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
-  background: ${ White.level4 };
+  background: ${White.level4};
   border-radius: 4px;
-  box-shadow: ${ Shadow.level1 };
+  box-shadow: ${Shadow.level1};
   left: 50%;
   min-height: 196px;
   max-height: 316px;
@@ -42,7 +42,7 @@ export const Header = styledComponents<any>('div').attrs(props => ({
 export const Title = styledComponents<any>('h2').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S900 };
+  color: ${Gray.S900};
   font-family: 'Source Sans Pro';
   font-size: 20px;
   font-weight: 600;
@@ -58,7 +58,7 @@ export const Body = styledComponents<any>('div').attrs(props => ({
 export const Text = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S800 };
+  color: ${Gray.S800};
   font-family: 'Source Sans Pro';
   font-size: 16px;
   line-height: 18px;

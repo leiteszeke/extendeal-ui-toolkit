@@ -44,8 +44,8 @@ export interface HeaderClasses {
   breadcrumb?: string;
   link?: string;
   userPanel?: {
-    wrapper?: string,
-    dropdown?: DropdownClasses,
+    wrapper?: string;
+    dropdown?: DropdownClasses;
   };
 }
 
@@ -59,15 +59,15 @@ export const defaultProps = {
     link: '',
     userPanel: {
       wrapper: '',
-      dropdown: {
-
-      },
+      dropdown: {},
     },
   },
   history: {
     goBack: undefined,
   },
-  logoHeader: (<Image source="https://test.extendeal.com/images/common/logo-extendeal.svg" />),
+  logoHeader: (
+    <Image source="https://test.extendeal.com/images/common/logo-extendeal.svg" />
+  ),
   showBackButton: false,
   showSearch: false,
   showUserPanel: false,

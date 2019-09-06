@@ -15,7 +15,7 @@ export const Input = styledComponents<any>('div').attrs(props => ({
   onClick: props.onClick,
 }))`
   border: none;
-  border-bottom: 1px solid ${ Gray.S400 };
+  border-bottom: 1px solid ${Gray.S400};
   box-sizing: border-box;
   cursor: pointer;
   height: 52px;
@@ -25,7 +25,7 @@ export const Input = styledComponents<any>('div').attrs(props => ({
 export const Options = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
-  box-shadow: ${ Shadow.level1 };
+  box-shadow: ${Shadow.level1};
   padding: 12px 0;
 `;
 
@@ -41,12 +41,12 @@ export const Option = styledComponents<any>('div').attrs(props => ({
 
   &.selected,
   &:hover {
-    background: ${ Gray.S400 };
+    background: ${Gray.S400};
   }
 
   &.option-selected {
     background: none;
-    color: ${ Gray.S800 };
+    color: ${Gray.S800};
     line-height: 14px;
     height: 14px;
     position: relative;
@@ -57,7 +57,7 @@ export const Option = styledComponents<any>('div').attrs(props => ({
 export const OptionLabel = styledComponents<any>('label').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S800 };
+  color: ${Gray.S800};
   font-family: 'Source Sans Pro';
   font-size: 14px;
   font-weight: 400;
@@ -70,7 +70,7 @@ export const OptionLabel = styledComponents<any>('label').attrs(props => ({
 export const Label = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S500 };
+  color: ${Gray.S500};
   font-size: 14px;
   font-weight: 400;
   height: 14px;

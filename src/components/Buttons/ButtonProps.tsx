@@ -1,6 +1,6 @@
 // Components
-import { Milhouse } from "../Colors/Primary/Milhouse";
-import { ReactNode } from "react";
+import { Milhouse } from '../Colors/Primary/Milhouse';
+import { ReactNode } from 'react';
 
 export interface ButtonProps {
   children?: ReactNode;
@@ -18,10 +18,10 @@ export interface ButtonProps {
 
 export const defaultProps = {
   classes: {
-    wrapper: ""
+    wrapper: '',
   },
   color: Milhouse,
   disabled: false,
-  noMargin: "",
-  variant: "classic"
+  noMargin: '',
+  variant: 'classic',
 };

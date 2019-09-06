@@ -21,8 +21,8 @@ export const Header = styledComponents<any>('div').attrs(props => ({
   display: flex;
   height: 45px;
 
-  ${ Wrapper }.opened & {
-    border-bottom: 1px solid ${ Gray.S500 }
+  ${Wrapper}.opened & {
+    border-bottom: 1px solid ${Gray.S500}
   }
 `;
 

@@ -8,7 +8,9 @@ export { Carousel } from './components/Carousel/Carousel';
 export { Checkbox } from './components/Checkbox/Checkbox';
 export { CheckboxList } from './components/Checkbox/CheckboxList';
 export { CodeSnippet } from './components/CodeSnippet/CodeSnippet';
-export { ComponentPresentation } from './components/ComponentPresentation/ComponentPresentation';
+export {
+  ComponentPresentation,
+} from './components/ComponentPresentation/ComponentPresentation';
 export { Colors } from './components/Colors/Colors';
 export { Datepicker } from './components/Datepicker/Datepicker';
 export { Dropdown } from './components/Dropdown/Dropdown';

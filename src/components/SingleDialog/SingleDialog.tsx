@@ -21,51 +21,44 @@ import {
 // Components
 import { Button } from '../Buttons/Button';
 
-const SingleDialog = (props:SingleDialogProps) => {
-  const {
-    classes,
-    footerButtons,
-    text,
-    title,
-    portal,
-    show,
-  } = objects.extend(defaultProps, props);
+const SingleDialog = (props: SingleDialogProps) => {
+  const { classes, footerButtons, text, title, portal, show } = objects.extend(
+    defaultProps,
+    props,
+  );
 
   if (show === false) {
     return <div />;
   }
 
-  return (
-    createPortal(
-      <Overlay classes={ classes.overlay }>
-        <Wrapper
-          classes={ classes.wrapper }
-        >
-            <Header>
-              <Title>{ title }</Title>
-            </Header>
+  return createPortal(
+    <Overlay classes={classes.overlay}>
+      <Wrapper classes={classes.wrapper}>
+        <Header>
+          <Title>{title}</Title>
+        </Header>
 
-            <Body>
-              <Text>{ text }</Text>
-            </Body>
+        <Body>
+          <Text>{text}</Text>
+        </Body>
 
-            <Footer>
-              { footerButtons.map((button:SingleDialogFooterButtonProps, index:number) => (
-                <Button
-                  color={ button.color }
-                  key={ index }
-                  label={ button.label }
-                  noMargin="horizontal"
-                  onClick={ button.onClick }
-                  variant="flat"
-                />
-              )) }
-            </Footer>
-        </Wrapper>
-      </Overlay>
-      ,
-      portal,
-    )
+        <Footer>
+          {footerButtons.map(
+            (button: SingleDialogFooterButtonProps, index: number) => (
+              <Button
+                color={button.color}
+                key={index}
+                label={button.label}
+                noMargin="horizontal"
+                onClick={button.onClick}
+                variant="flat"
+              />
+            ),
+          )}
+        </Footer>
+      </Wrapper>
+    </Overlay>,
+    portal,
   );
 };
 

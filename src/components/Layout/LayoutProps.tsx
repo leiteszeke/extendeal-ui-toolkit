@@ -33,7 +33,7 @@ export interface LayoutProps {
 }
 
 export const defaultProps = {
-  contentId: `layout_${ new Date().getMilliseconds() }`,
+  contentId: `layout_${new Date().getMilliseconds()}`,
   classes: {
     content: '',
     header: {

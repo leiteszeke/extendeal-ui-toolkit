@@ -10,7 +10,7 @@ export const Container = styledComponents<any>('div').attrs(props => ({
   style: props.style,
 }))`
   align-items: center;
-  background: ${ White.level4 };
+  background: ${White.level4};
   display: flex;
   height: 100%;
   left: 0;
@@ -52,7 +52,7 @@ export const Container = styledComponents<any>('div').attrs(props => ({
     }
 
     &__message {
-      color: ${ Gray.S400 };
+      color: ${Gray.S400};
       display: block;
       font-size: 12px;
       font-weight: 200;
@@ -76,7 +76,7 @@ export const Container = styledComponents<any>('div').attrs(props => ({
 
     &__arc {
       animation: Spinner-arc-bounce 2.5s ease-in-out infinite;
-      stroke: ${ Garfield.G900 };
+      stroke: ${Garfield.G900};
       stroke-dasharray: 1, 10;
       stroke-dashoffset: 0;
       stroke-linecap: round;
@@ -84,7 +84,7 @@ export const Container = styledComponents<any>('div').attrs(props => ({
 
     &__wheel {
       fill: none;
-      stroke: ${ Gray.S400 };
+      stroke: ${Gray.S400};
       stroke-width: 4px;
     }
 

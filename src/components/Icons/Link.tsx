@@ -5,14 +5,9 @@ import { SvgElement } from './IconStyle';
 // Props
 import { IconProps, defaultProps } from './IconProps';
 
-const Link = (props:IconProps) => {
+const Link = (props: IconProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    fillColor,
-    height,
-    onClick,
-    width,
-  } = componentProps;
+  const { fillColor, height, onClick, width } = componentProps;
 
   const handleClick = () => {
     if (typeof onClick === 'function') {
@@ -22,11 +17,11 @@ const Link = (props:IconProps) => {
 
   return (
     <SvgElement
-      height={ height }
-      onClick={ handleClick }
+      height={height}
+      onClick={handleClick}
       preserveAspectRatio="none"
       viewBox="0 0 20 20"
-      width={ width }
+      width={width}
     >
       <g transform="translate(322 208.422)">
         <path
@@ -54,7 +49,7 @@ const Link = (props:IconProps) => {
             c1.0015869,0.0007629,1.9617615-0.3997345,2.6659546-1.1119843
             C-302.3995972-196.4485016-301.9877319-197.4159088-302.0002747-198.4244537z
           "
-          fill={ fillColor }
+          fill={fillColor}
         />
         <path
           d="
@@ -80,7 +75,7 @@ const Link = (props:IconProps) => {
             c-2.0848999,0.0038605-3.7741089,1.6930389-3.7779541,3.7779541
             C-322.0005188-197.4496765-321.6125793-196.5274048-320.9240112-195.8544769z
           "
-          fill={ fillColor }
+          fill={fillColor}
         />
       </g>
     </SvgElement>

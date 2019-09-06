@@ -6,8 +6,8 @@ import { Shadow } from '../Shadow/Shadow';
 export const Wrapper = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
-  background: ${ props => props.backgroundColor };
-  box-shadow: ${ Shadow.level1 };
+  background: ${props => props.backgroundColor};
+  box-shadow: ${Shadow.level1};
   display: flex;
   flex-direction: column;
   height: calc(100% - 48px);

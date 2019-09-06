@@ -10,10 +10,12 @@
   "scripts": {
     "build": "webpack",
     "build-prod": "webpack -p",
-    "deploy": "npm run build && sh deploy.sh ",
     "watch": "webpack --watch --watch-poll ",
-    "lint": "tslint './src/**/*.tsx' -w",
+    "lint": "tslint './src/**/*.tsx'",
+    "lint:fix": "tslint './src/**/*.{js,jsx,ts,tsx}' --fix",
     "storybook": "start-storybook -p 6006",
+    "prettier": "prettier --check ./src/**/*.{js,jsx,ts,tsx}",
+    "prettier:fix": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
     "build-storybook": "build-storybook"
   },
   "repository": {

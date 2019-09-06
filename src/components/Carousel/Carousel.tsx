@@ -8,15 +8,16 @@ import { Container, Content, HideableDiv, Footer } from './CarouselStyle';
 import { CarouselProps, SlideProps, defaultProps } from './CarouselProps';
 import { Button } from '../Buttons/Button';
 
-const isActiveSlide = (index: number, activeIndex: number) => index === activeIndex;
+const isActiveSlide = (index: number, activeIndex: number) =>
+  index === activeIndex;
 
 const SlideContent = (props: SlideProps) => {
   return (
     <HideableDiv
-      active={ isActiveSlide(props.index, props.activeIndex) }
-      classes={ 'carousel__body' }
+      active={isActiveSlide(props.index, props.activeIndex)}
+      classes={'carousel__body'}
     >
-      { props.slide }
+      {props.slide}
     </HideableDiv>
   );
 };
@@ -70,79 +71,76 @@ class Carousel extends React.PureComponent<any, any> {
   slideButtons(buttons: any, index: number, activeIndex: number) {
     const validButton = (button: any) => React.isValidElement(button);
     const [prev, next] = buttons;
-    const prevClick = validButton(prev) && prev.props.onClick || this.goToPrevSlide;
-    const nextClick = validButton(next) && next.props.onClick || this.goToNextSlide;
+    const prevClick =
+      (validButton(prev) && prev.props.onClick) || this.goToPrevSlide;
+    const nextClick =
+      (validButton(next) && next.props.onClick) || this.goToNextSlide;
 
     return (
-        <HideableDiv active={ index === activeIndex }>
-          {
-            validButton(prev)
-            && React.cloneElement(prev, { onClick: prevClick, key: `prev-${index}` })
-          }
-          {
-            validButton(next)
-            && React.cloneElement(next, { onClick: nextClick, key: `next-${index}` })
-          }
-        </HideableDiv>
+      <HideableDiv active={index === activeIndex}>
+        {validButton(prev) &&
+          React.cloneElement(prev, {
+            onClick: prevClick,
+            key: `prev-${index}`,
+          })}
+        {validButton(next) &&
+          React.cloneElement(next, {
+            onClick: nextClick,
+            key: `next-${index}`,
+          })}
+      </HideableDiv>
     );
   }
 
   componentDidUpdate(prevProps: any, prevState: any) {
     if (
-      prevState.activeIndex !== this.state.activeIndex
-      && this.props.handleSlideChange
-      && typeof this.props.handleSlideChange === 'function'
+      prevState.activeIndex !== this.state.activeIndex &&
+      this.props.handleSlideChange &&
+      typeof this.props.handleSlideChange === 'function'
     ) {
       this.props.handleSlideChange(this.state.activeIndex);
     }
   }
 
   render() {
-    const {
-      content,
-      classes,
-    } = { ...defaultProps, ...this.props };
+    const { content, classes } = { ...defaultProps, ...this.props };
 
     return (
       <React.Fragment>
         <Button
           classes={{ wrapper: 'carousel-reset' }}
           variant="invisible"
-          onClick={ this.resetSlide }
+          onClick={this.resetSlide}
         />
 
-        <Container classes={ classnames('carousel', classes.container) }>
-          {
-            content.map((slide: any, index: number) => {
-              const { activeIndex } = this.state;
+        <Container classes={classnames('carousel', classes.container)}>
+          {content.map((slide: any, index: number) => {
+            const { activeIndex } = this.state;
 
-              return (
-                isActiveSlide(index, activeIndex)
-                && (
-                  <Content
-                    key={ index }
-                    data-slide-name={ slide.name }
-                    classes={classnames(
-                      'carousel__content',
-                      classes.container,
-                    )}
+            return (
+              isActiveSlide(index, activeIndex) && (
+                <Content
+                  key={index}
+                  data-slide-name={slide.name}
+                  classes={classnames('carousel__content', classes.container)}
+                >
+                  <SlideContent
+                    classes={{ slideContent: classes.slideContent }}
+                    key={index}
+                    index={index}
+                    activeIndex={activeIndex}
+                    slide={this.props.renderSlide(slide)}
+                  />
+
+                  <Footer
+                    classes={classnames('carousel__footer', classes.footer)}
                   >
-                    <SlideContent
-                      classes={{ slideContent: classes.slideContent }}
-                      key={ index }
-                      index={ index }
-                      activeIndex={ activeIndex }
-                      slide={ this.props.renderSlide(slide) }
-                    />
-
-                    <Footer classes={ classnames('carousel__footer', classes.footer) }>
-                      { this.slideButtons(slide.buttons, index, activeIndex) }
-                    </Footer>
-                  </Content>
-                )
-              );
-            })
-          }
+                    {this.slideButtons(slide.buttons, index, activeIndex)}
+                  </Footer>
+                </Content>
+              )
+            );
+          })}
         </Container>
       </React.Fragment>
     );

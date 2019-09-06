@@ -53,12 +53,12 @@ export const Content = styledComponents<any>('div').attrs(props => ({
 export const Label = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S800 };
+  color: ${Gray.S800};
   font-family: 'Source Sans Pro';
   font-size: 14px;
   font-weight: 400;
 
-  ${ Wrapper }.disabled & {
-    color: ${ Gray.S500 };
+  ${Wrapper}.disabled & {
+    color: ${Gray.S500};
   }
 `;

@@ -6,8 +6,8 @@ import { InputElement, defaultStyle } from './InputStyle';
 // Props
 import { InputProps } from './InputProps';
 
-const Input = (props: InputProps) =>  {
-  let input:HTMLElement;
+const Input = (props: InputProps) => {
+  let input: HTMLElement;
 
   const {
     autoComplete,
@@ -32,20 +32,22 @@ const Input = (props: InputProps) =>  {
     value,
   } = props;
 
-  const handleOnChange = (event:React.ChangeEvent<HTMLInputElement>) => {
-    const value = dataMask === true
-      ? numbers.demaskFloat(event.target.value)
-      : event.target.value;
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value =
+      dataMask === true
+        ? numbers.demaskFloat(event.target.value)
+        : event.target.value;
 
     if (typeof onChange === 'function') {
       onChange(name, value, event);
     }
   };
 
-  const handleOnInput = (event:React.ChangeEvent<HTMLInputElement>) => {
-    const value = dataMask === true
-      ? numbers.demaskFloat(event.target.value)
-      : event.target.value;
+  const handleOnInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value =
+      dataMask === true
+        ? numbers.demaskFloat(event.target.value)
+        : event.target.value;
 
     if (typeof onInput === 'function') {
       onInput(name, value, event);
@@ -60,27 +62,30 @@ const Input = (props: InputProps) =>  {
 
   return (
     <InputElement
-      autoComplete={ autoComplete ? 'on' :  'off' }
-      className={ classes }
-      dataDefault={ defaultValue }
-      dataMask={ dataMask }
-      disabled={ disabled }
-      error={ error }
-      id={ id }
+      autoComplete={autoComplete ? 'on' : 'off'}
+      className={classes}
+      dataDefault={defaultValue}
+      dataMask={dataMask}
+      disabled={disabled}
+      error={error}
+      id={id}
       inputStyle={{ ...defaultStyle, ...inputStyle }}
-      maxLength={ maxLength }
-      minLength={ minLength }
-      name={ name }
-      onChange={ handleOnChange }
-      onInput={ handleOnInput }
-      pattern={ pattern }
-      placeholder={ placeholder }
-      readOnly={ readOnly }
-      ref={ (el:HTMLElement) => { input = el; initializeInput(); } }
-      required={ required }
-      spellCheck={ spellCheck }
-      type={ type }
-      value={ value }
+      maxLength={maxLength}
+      minLength={minLength}
+      name={name}
+      onChange={handleOnChange}
+      onInput={handleOnInput}
+      pattern={pattern}
+      placeholder={placeholder}
+      readOnly={readOnly}
+      ref={(el: HTMLElement) => {
+        input = el;
+        initializeInput();
+      }}
+      required={required}
+      spellCheck={spellCheck}
+      type={type}
+      value={value}
     />
   );
 };

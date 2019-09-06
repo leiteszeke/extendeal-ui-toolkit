@@ -25,7 +25,7 @@ import {
   defaultProps,
 } from './DatepickerProps';
 
-const Datepicker = (props:DatepickerProps) => {
+const Datepicker = (props: DatepickerProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     classes,
@@ -48,16 +48,16 @@ const Datepicker = (props:DatepickerProps) => {
     highlightWithRanges,
   } = componentProps;
 
-  const handleOnChange = (date:Date) => {
+  const handleOnChange = (date: Date) => {
     if (typeof onChange === 'function') {
       onChange(name, date);
     }
   };
 
-  const DateRanges = (props:Array<DateRange>):Array<DateRangeArray> => {
+  const DateRanges = (props: Array<DateRange>): Array<DateRangeArray> => {
     const dates = Array<DateRangeArray>();
 
-    props.forEach((dateRange:DateRange) => {
+    props.forEach((dateRange: DateRange) => {
       const internDates = Array<Date>();
       const { dateFrom, dateTo, className } = dateRange;
       const initialDate = moment(dateFrom).add(1, 'days');
@@ -74,14 +74,15 @@ const Datepicker = (props:DatepickerProps) => {
   };
 
   const getHightlightDates = () => {
-    const highlight:any = [];
+    const highlight: any = [];
     const ranges = DateRanges(highlightWithRanges);
 
     ranges.forEach((range, index) => {
-      const array:any = [];
-      const idx = typeof range.className !== 'undefined'
-        ? ` ${range.className}`
-        : `react-datepicker__day--highlighted-custom-${index}`;
+      const array: any = [];
+      const idx =
+        typeof range.className !== 'undefined'
+          ? ` ${range.className}`
+          : `react-datepicker__day--highlighted-custom-${index}`;
 
       array[idx] = range.range;
       highlight.push(array);
@@ -90,42 +91,37 @@ const Datepicker = (props:DatepickerProps) => {
     return highlight;
   };
 
-  const CalendarContainer = (props:any) => {
-    const {
-      className,
-      children,
-    } = props;
+  const CalendarContainer = (props: any) => {
+    const { className, children } = props;
 
     return (
       <div className={className}>
-        <HeaderMessage>{ label }</HeaderMessage>
-        <div style={{ position: 'relative' }}>
-          {children}
-        </div>
+        <HeaderMessage>{label}</HeaderMessage>
+        <div style={{ position: 'relative' }}>{children}</div>
       </div>
     );
   };
 
   return (
-    <DatepickerContent classes={ classes.content }>
-      { label && <label>{ label }:</label> }
+    <DatepickerContent classes={classes.content}>
+      {label && <label>{label}:</label>}
       <Wrapper
-        classes={ classnames(
+        classes={classnames(
           {
             hasError: error === true,
           },
           classes.wrapper,
-        ) }
+        )}
         datepickerStyle={{ ...defaultStyle, ...datepickerStyle }}
       >
         <WrapperIcon
-          classes={ classes.icon }
+          classes={classes.icon}
           datepickerStyle={{ ...defaultStyle.icon, ...datepickerStyle }}
         >
           <Calendar
-            fillColor={ Colors.Gray.level0 }
-            height={ browser.isDesktop() ? 12 : 14 }
-            width={ browser.isDesktop() ? 12 : 14 }
+            fillColor={Colors.Gray.level0}
+            height={browser.isDesktop() ? 12 : 14}
+            width={browser.isDesktop() ? 12 : 14}
           />
         </WrapperIcon>
         <DatePicker
@@ -134,36 +130,33 @@ const Datepicker = (props:DatepickerProps) => {
               ? CalendarContainer
               : undefined
           }
-          className={ classes.datepicker }
-          excludeDates={ excludeDates }
-          highlightDates={ highlightDates || getHightlightDates() }
-          minDate={ minDate }
-          onChange={ handleOnChange }
-          placeholderText= "-- / -- / --"
-          selected={ selected }
-          startDate={ startDate }
-          withPortal={ browser.isDesktop() === false ||  withPortal === true}
+          className={classes.datepicker}
+          excludeDates={excludeDates}
+          highlightDates={highlightDates || getHightlightDates()}
+          minDate={minDate}
+          onChange={handleOnChange}
+          placeholderText="-- / -- / --"
+          selected={selected}
+          startDate={startDate}
+          withPortal={browser.isDesktop() === false || withPortal === true}
         />
 
-        {
-          (helperText !== '' || errorMessage !== '')
-          && (helperTextUp === true || helperTextDown === true)
-          && error === true
-          && (
-            <span className={
-              classnames(
+        {(helperText !== '' || errorMessage !== '') &&
+          (helperTextUp === true || helperTextDown === true) &&
+          error === true && (
+            <span
+              className={classnames(
                 {
                   'react-datepicker__helperText up': helperTextUp,
                   'react-datepicker__helperText down': helperTextDown,
                   'react-datepicker__helperText up--right': helperTextUpRight,
                 },
                 classes.helperText,
-              )
-            }>
-              { helperText || errorMessage}
+              )}
+            >
+              {helperText || errorMessage}
             </span>
-          )
-        }
+          )}
       </Wrapper>
     </DatepickerContent>
   );

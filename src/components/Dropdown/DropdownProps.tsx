@@ -37,6 +37,6 @@ export const defaultProps = {
     wrapper: '',
   },
   color: Gray,
-  identifier: `ExtDropdown_${ new Date().getMilliseconds() }`,
+  identifier: `ExtDropdown_${new Date().getMilliseconds()}`,
   withButton: true,
 };

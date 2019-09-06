@@ -18,8 +18,8 @@ export const defaultProps = {
     icon: '',
     wrapper: '',
   } as AccordionClasses,
-  onToggle: () => { return; },
-  rows: [
-    {} as AccordionProps,
-  ],
+  onToggle: () => {
+    return;
+  },
+  rows: [{} as AccordionProps],
 };

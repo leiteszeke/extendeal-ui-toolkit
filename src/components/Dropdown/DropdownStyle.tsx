@@ -8,7 +8,7 @@ export const Wrapper = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
   id: props.identifier,
 }))`
-  color: ${ props => props.color.level1 };
+  color: ${props => props.color.level1};
   position: relative;
 `;
 
@@ -19,7 +19,7 @@ export const Button = styledComponents<any>('button').attrs(props => ({
     },
     props.classes,
   ),
-  identifier: `Button_${ props.identifier }`,
+  identifier: `Button_${props.identifier}`,
 }))`
   border: 1px solid transparent;
   border-radius: 4px;
@@ -32,7 +32,7 @@ export const Button = styledComponents<any>('button').attrs(props => ({
   transition: background 0.5s ease;
 
   &.active {
-    background: ${ props => props.color.level1 };
+    background: ${props => props.color.level1};
   }
 
   > i {
@@ -57,7 +57,7 @@ export const DropdownMenu = styledComponents<any>('ul').attrs(props => ({
 }))`
   background: white;
   border-radius: 4px;
-  box-shadow: ${ Shadow.level1 };
+  box-shadow: ${Shadow.level1};
   display: block;
   font-size: 12px;
   font-weight: 400;

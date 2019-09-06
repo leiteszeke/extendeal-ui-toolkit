@@ -7,18 +7,14 @@ import { Wrapper } from './RadioGroupStyle';
 // Components
 import { Radio } from '../Radio/Radio';
 
-const RadioGroup = (props:RadioGroupProps) => {
+const RadioGroup = (props: RadioGroupProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    classes,
-    items,
-    name,
-    onClick,
-  } = componentProps;
+  const { classes, items, name, onClick } = componentProps;
 
-  const getSelectedIndex = ():number => items.findIndex(item => item.checked === true);
+  const getSelectedIndex = (): number =>
+    items.findIndex(item => item.checked === true);
 
-  const handleClick = (name:string, index:number) => {
+  const handleClick = (name: string, index: number) => {
     if (typeof onClick === 'function') {
       const selectedIndex = getSelectedIndex();
 
@@ -33,16 +29,16 @@ const RadioGroup = (props:RadioGroupProps) => {
   };
 
   return (
-    <Wrapper classes={ classes.wrapper }>
-      { items.map((item, index) =>
+    <Wrapper classes={classes.wrapper}>
+      {items.map((item, index) => (
         <Radio
-          { ...item }
+          {...item}
           classes={{ ...item.classes }}
-          key={ index }
-          name={ name }
-          onClick={ (name:string) => handleClick(name, index) }
-        />,
-      ) }
+          key={index}
+          name={name}
+          onClick={(name: string) => handleClick(name, index)}
+        />
+      ))}
     </Wrapper>
   );
 };

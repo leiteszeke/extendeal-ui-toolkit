@@ -8,14 +8,9 @@ import { FilterChipProps, defaultProps } from './FilterChipProps';
 import { Close } from '../Icons/Close';
 import { Colors } from '../Colors/Colors';
 
-const FilterChip = (props:FilterChipProps) => {
+const FilterChip = (props: FilterChipProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    classes,
-    label,
-    onClick,
-    removable,
-  } = componentProps;
+  const { classes, label, onClick, removable } = componentProps;
 
   const handleClick = () => {
     if (typeof onClick === 'function') {
@@ -24,19 +19,19 @@ const FilterChip = (props:FilterChipProps) => {
   };
 
   return (
-    <Wrapper classes={ classes.wrapper }>
-      <Label classes={ classes.label }>{ label }</Label>
-      { removable === true &&
-        <Icon classes={ classes.icon }>
+    <Wrapper classes={classes.wrapper}>
+      <Label classes={classes.label}>{label}</Label>
+      {removable === true && (
+        <Icon classes={classes.icon}>
           <Close
             backgroundColor="transparent"
-            fillColor={ Colors.Gray.S800 }
-            height={ 16 }
-            onClick={ handleClick }
-            width={ 16 }
+            fillColor={Colors.Gray.S800}
+            height={16}
+            onClick={handleClick}
+            width={16}
           />
         </Icon>
-      }
+      )}
     </Wrapper>
   );
 };

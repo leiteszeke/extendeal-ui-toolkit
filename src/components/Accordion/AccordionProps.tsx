@@ -31,9 +31,7 @@ export interface ActionProps {
 }
 
 export const defaultProps = {
-  actions: [
-    {} as ActionProps,
-  ],
+  actions: [{} as ActionProps],
   classes: {
     body: '',
     dropdown: {

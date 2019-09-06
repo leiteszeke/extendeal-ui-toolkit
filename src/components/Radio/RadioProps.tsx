@@ -23,5 +23,5 @@ export const defaultProps = {
   },
   disabled: false,
   label: 'Radio',
-  name: `Radio_${ new Date().getMilliseconds() }`,
+  name: `Radio_${new Date().getMilliseconds()}`,
 };

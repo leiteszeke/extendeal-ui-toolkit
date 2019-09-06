@@ -5,14 +5,9 @@ import { SvgElement } from './IconStyle';
 // Props
 import { IconProps, defaultProps } from './IconProps';
 
-const LogoMono = (props:IconProps) => {
+const LogoMono = (props: IconProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    fillColor,
-    height,
-    onClick,
-    width,
-  } = componentProps;
+  const { fillColor, height, onClick, width } = componentProps;
 
   const handleClick = () => {
     if (typeof onClick === 'function') {
@@ -22,11 +17,11 @@ const LogoMono = (props:IconProps) => {
 
   return (
     <SvgElement
-      height={ height }
-      onClick={ handleClick }
+      height={height}
+      onClick={handleClick}
       preserveAspectRatio="none"
       viewBox="0 0 32 32"
-      width={ width }
+      width={width}
     >
       <g>
         <path
@@ -52,7 +47,7 @@ const LogoMono = (props:IconProps) => {
             c-0.050993,0-0.0902061,0.0430908-0.0902061,0.0941315v7.5544319
             C17.0069447,25.0596333,16.602932,29.5506935,21.4470367,29.5506935z
           "
-          fill={ fillColor }
+          fill={fillColor}
         />
         <path
           d="
@@ -77,14 +72,9 @@ const LogoMono = (props:IconProps) => {
             c0.050992,0,0.0902061,0.0430908,0.0902061,0.0941315v7.5544319
             C14.9930563,25.0596333,15.397068,29.5506935,10.5529633,29.5506935z
           "
-          fill={ fillColor }
+          fill={fillColor}
         />
-        <circle
-          cx="16"
-          cy="6.5986114"
-          fill={ fillColor }
-          r="4.1493053"
-        />
+        <circle cx="16" cy="6.5986114" fill={fillColor} r="4.1493053" />
         <path
           d="
             M14.8084211,14.7536373c0-0.8827085-0.4854612-1.6530142-1.2023754-2.0620899
@@ -104,7 +94,7 @@ const LogoMono = (props:IconProps) => {
             v-0.0037594l-0.002614-0.0069466
             C14.7617464,15.280158,14.8084211,15.022686,14.8084211,14.7536373z
           "
-          fill={ fillColor }
+          fill={fillColor}
         />
         <path
           d="
@@ -126,7 +116,7 @@ const LogoMono = (props:IconProps) => {
             v-0.0037594l0.0026131-0.0069466
             C17.2382545,15.280158,17.1915779,15.022686,17.1915779,14.7536373z
           "
-          fill={ fillColor }
+          fill={fillColor}
         />
       </g>
     </SvgElement>

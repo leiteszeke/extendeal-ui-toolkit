@@ -5,7 +5,7 @@ import { SvgElement } from './IconStyle';
 // Props
 import { IconProps, defaultProps } from './IconProps';
 
-const ArrowUp = (props:IconProps) => {
+const ArrowUp = (props: IconProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     backgroundColor,
@@ -24,12 +24,12 @@ const ArrowUp = (props:IconProps) => {
 
   return (
     <SvgElement
-      height={ height }
-      onClick={ handleClick }
+      height={height}
+      onClick={handleClick}
       preserveAspectRatio="none"
-      style={ style }
+      style={style}
       viewBox="0 0 32 32"
-      width={ width }
+      width={width}
     >
       <path
         d="

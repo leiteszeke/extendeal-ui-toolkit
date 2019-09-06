@@ -20,7 +20,7 @@ import { Close } from '../Icons/Close';
 import { ArrowBack } from '../Icons/ArrowBack';
 import { Gray } from '../Colors/Acromathic/Gray';
 
-const MobileSearch = (props:MobileSearchProps) => {
+const MobileSearch = (props: MobileSearchProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     classes,
@@ -33,7 +33,7 @@ const MobileSearch = (props:MobileSearchProps) => {
     placeHolder,
   } = componentProps;
 
-  const handleOnChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (typeof onChange === 'function') {
       onChange(event.target.value);
     }
@@ -59,42 +59,42 @@ const MobileSearch = (props:MobileSearchProps) => {
 
   return (
     <React.Fragment>
-      <IconWrapper classes={ classes.iconWrapper }>
+      <IconWrapper classes={classes.iconWrapper}>
         <Search
-          fillColor={ White.level4 }
-          height={ 23 }
-          onClick={ handleOnOpen }
-          width={ 23 }
+          fillColor={White.level4}
+          height={23}
+          onClick={handleOnOpen}
+          width={23}
         />
       </IconWrapper>
 
-      <Wrapper classes={ classnames({ opened }, classes.wrapper) }>
-        <LeftIcon classes={ classes.leftIcon }>
+      <Wrapper classes={classnames({ opened }, classes.wrapper)}>
+        <LeftIcon classes={classes.leftIcon}>
           <ArrowBack
-            fillColor={ Gray.S800 }
-            height={ 21 }
-            onClick={ handleOnClose }
-            width={ 21 }
+            fillColor={Gray.S800}
+            height={21}
+            onClick={handleOnClose}
+            width={21}
           />
         </LeftIcon>
         <Input
-          classes={ classes.input }
-          inputValue={ inputValue }
-          onChange={ handleOnChange }
-          placeHolder={ placeHolder }
+          classes={classes.input}
+          inputValue={inputValue}
+          onChange={handleOnChange}
+          placeHolder={placeHolder}
         />
-        { typeof inputValue !== 'undefined' && inputValue !== '' && (
-          <RightIcon classes={ classes.rightIcon }>
+        {typeof inputValue !== 'undefined' && inputValue !== '' && (
+          <RightIcon classes={classes.rightIcon}>
             <Close
-              fillColor={ Gray.S800 }
-              height={ 21 }
-              onClick={ handleOnDelete }
-              width={ 21 }
+              fillColor={Gray.S800}
+              height={21}
+              onClick={handleOnDelete}
+              width={21}
             />
           </RightIcon>
-        ) }
+        )}
       </Wrapper>
-      <Overlay classes={ classnames({ opened }, classes.overlay) } />
+      <Overlay classes={classnames({ opened }, classes.overlay)} />
     </React.Fragment>
   );
 };

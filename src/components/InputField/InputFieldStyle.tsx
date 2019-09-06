@@ -19,10 +19,10 @@ export const StyledInput = styledComponents<any>('input').attrs(props => ({
   font-size: 14px;
   padding: 8px 0;
   display: block;
-  width: ${ props => `${ props.width }px` };
+  width: ${props => `${props.width}px`};
   border: none;
-  border-bottom: 1px solid ${ Gray.S400 };
-  color: ${ Gray.S800 };
+  border-bottom: 1px solid ${Gray.S400};
+  color: ${Gray.S800};
 
   &:focus {
     outline: none;
@@ -31,7 +31,7 @@ export const StyledInput = styledComponents<any>('input').attrs(props => ({
   &:focus ~ label, &:valid ~ label {
     top: -20px;
     font-size: 12px;
-    color: ${ Gray.S500 };
+    color: ${Gray.S500};
   }
 
   &:focus ~ .bar:before, &:focus ~ .bar:after {
@@ -46,7 +46,7 @@ export const Bar = styledComponents<any>('span').attrs(props => ({
 }))`
   position: relative;
   display: block;
-  width: ${ props => `${ props.width }px` };
+  width: ${props => `${props.width}px`};
 
   &:before, &:after {
     content: '';
@@ -54,7 +54,7 @@ export const Bar = styledComponents<any>('span').attrs(props => ({
     width: 0;
     bottom: 1px;
     position: absolute;
-    background: ${ props => props.color.level4 };
+    background: ${props => props.color.level4};
     transition: 0.2s ease all;
   }
 
@@ -70,7 +70,7 @@ export const Bar = styledComponents<any>('span').attrs(props => ({
 export const StyledLabel = styledComponents<any>('label').attrs(props => ({
   className: props.classes,
 }))`
-  color: ${ Gray.S500 };
+  color: ${Gray.S500};
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -83,5 +83,5 @@ export const HelperText = styledComponents<any>('span').attrs(props => ({
   className: classnames('helperText', props.classes),
 }))`
   font-size: 12px;
-  color: ${ Gray.S500 };
+  color: ${Gray.S500};
 `;

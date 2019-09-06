@@ -5,15 +5,9 @@ import { SvgElement } from './IconStyle';
 // Props
 import { IconProps, defaultProps } from './IconProps';
 
-const Calendar = (props:IconProps) => {
+const Calendar = (props: IconProps) => {
   const componentProps = { ...defaultProps, ...props };
-  const {
-    backgroundColor,
-    fillColor,
-    height,
-    onClick,
-    width,
-  } = componentProps;
+  const { backgroundColor, fillColor, height, onClick, width } = componentProps;
 
   const handleClick = () => {
     if (typeof onClick === 'function') {
@@ -22,16 +16,16 @@ const Calendar = (props:IconProps) => {
   };
 
   return (
-<SvgElement
-      height={ height }
-      onClick={ handleClick }
+    <SvgElement
+      height={height}
+      onClick={handleClick}
       preserveAspectRatio="none"
       viewBox="0 0 12 12"
-      width={ width }
+      width={width}
     >
       <g>
         <path
-          fill={ fillColor }
+          fill={fillColor}
           d="
 						M11.5713482,2.5707858v8.5719109c0,0.2317648-0.0843801,0.4331522-0.2542658,0.6030378
 						C11.1471968,11.9144945,10.9458094,12,10.7140446,12H

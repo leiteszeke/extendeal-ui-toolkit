@@ -9,8 +9,8 @@ export const HeaderWrapper = styledComponents<any>('header').attrs(props => ({
   className: props.classes,
 }))`
   align-items: center;
-  background: ${ props => props.backgroundColor };
-  box-shadow: ${ Shadow.level1 };
+  background: ${props => props.backgroundColor};
+  box-shadow: ${Shadow.level1};
   box-sizing: border-box;
   display: flex;
   height: 48px;
@@ -42,7 +42,7 @@ export const Breadcrumb = styledComponents<any>('p').attrs(props => ({
   className: props.classes,
 }))`
   align-items: center;
-  color: ${ White.level4 };
+  color: ${White.level4};
   display: flex;
   font-size: 16px;
   justify-content: center;
@@ -90,7 +90,7 @@ export const Separator = styledComponents<any>('hr').attrs(props => ({
   className: props.classes,
 }))`
   border: 0;
-  border-top: 1px solid ${ Milhouse.level4 };
+  border-top: 1px solid ${Milhouse.level4};
   height: 1px;
   margin: 8px 0;
   padding: 0;

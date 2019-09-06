@@ -7,7 +7,7 @@ import { Milhouse } from '../Colors/Primary/Milhouse';
 import { Shadow } from '../Shadow/Shadow';
 
 // Default Style
-export const defaultStyle =  {
+export const defaultStyle = {
   borderDisabled: Gray.S500,
   boxShadow: Shadow.level1,
   boxShadowDisabled: 'transparent',
@@ -33,13 +33,13 @@ export const InputElement = styledComponents<any>('input').attrs(props => ({
   onInput: props.onInput,
   value: props.value,
 }))`
-  font-size: ${ props => props.inputStyle.inputFontSize };
+  font-size: ${props => props.inputStyle.inputFontSize};
   height: 28px;
-  width: ${ props => props.inputStyle.inputWidth };
-  border: 1px solid ${ props => props.inputStyle.inputBorderColor };
+  width: ${props => props.inputStyle.inputWidth};
+  border: 1px solid ${props => props.inputStyle.inputBorderColor};
   border-radius: 4px;
-  color: ${ props => props.inputStyle.inputFontColor };
-  text-align: ${ props => props.inputStyle.inputAlignText };
+  color: ${props => props.inputStyle.inputFontColor};
+  text-align: ${props => props.inputStyle.inputAlignText};
   outline: none;
   padding: 0 4px 0;
   font-family: 'Source Sans Pro';
@@ -47,39 +47,39 @@ export const InputElement = styledComponents<any>('input').attrs(props => ({
   overflow: auto;
 
   &.elevated {
-    box-shadow: ${ props => props.inputStyle.boxShadow };
+    box-shadow: ${props => props.inputStyle.boxShadow};
   }
 
   &:active {
-    border: 1px solid ${ props => props.inputStyle.inputActiveColor };
+    border: 1px solid ${props => props.inputStyle.inputActiveColor};
   }
 
   &:focus {
-    border: 1px solid ${ props => props.inputStyle.inputFocusColor };
+    border: 1px solid ${props => props.inputStyle.inputFocusColor};
   }
 
   &[error],
   &.error{
-    border-color: ${ props => props.inputStyle.inputErrorColor };
+    border-color: ${props => props.inputStyle.inputErrorColor};
   }
 
   &[disabled],
   &.disabled {
-    color: ${ props => props.inputStyle.disabledColor };
-    border-color:${ props => props.inputStyle.borderDisabled };
-    background: ${ props => props.inputStyle.disabledColorBackground };
-    box-shadow: 1px 2px 6px ${ props => props.inputStyle.boxShadowDisabled };
+    color: ${props => props.inputStyle.disabledColor};
+    border-color:${props => props.inputStyle.borderDisabled};
+    background: ${props => props.inputStyle.disabledColorBackground};
+    box-shadow: 1px 2px 6px ${props => props.inputStyle.boxShadowDisabled};
     pointer-events: none;
 
     &::placeholder {
-      color: ${ props => props.inputStyle.disabledColor };
+      color: ${props => props.inputStyle.disabledColor};
     }
   }
 
   &[readOnly],
   &.readOnly {
-    border-color:${ props => props.inputStyle.readOnlyColor };
-    box-shadow: 1px 2px 6px ${ props => props.inputStyle.readOnlyColor };
+    border-color:${props => props.inputStyle.readOnlyColor};
+    box-shadow: 1px 2px 6px ${props => props.inputStyle.readOnlyColor};
     pointer-events: none;
   }
 `;

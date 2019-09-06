@@ -11,7 +11,7 @@ export const Overlay = styledComponents<any>('div').attrs(props => ({
   display: none;
 
   &.opened {
-    background: ${ utils.colorWithOpacity(Colors.Black.level4, 0.2) };
+    background: ${utils.colorWithOpacity(Colors.Black.level4, 0.2)};
     display: flex;
     height: 100%;
     position: absolute;
@@ -24,7 +24,7 @@ export const Overlay = styledComponents<any>('div').attrs(props => ({
 export const BackdropWrapper = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
-  background: ${ Colors.White.level4 };
+  background: ${Colors.White.level4};
   bottom: 0;
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.8);
   position: absolute;
@@ -81,12 +81,12 @@ export const BackdropHeader = styledComponents<any>('div').attrs(props => ({
   className: props.classes,
 }))`
   box-sizing: border-box;
-  color: ${ Colors.Gray.level7 };
+  color: ${Colors.Gray.level7};
   display: flex;
   justify-content: space-between;
   padding: 24px 16px;
 
-  ${ BackdropWrapper }.closed & {
+  ${BackdropWrapper}.closed & {
     align-items: center;
     justify-content: center;
     padding: 0;
@@ -119,7 +119,7 @@ export const Title = styledComponents<any>('span').attrs(props => ({
   width: calc(100% - 24px);
   word-break: break-word;
 
-  ${ BackdropWrapper }.closed & {
+  ${BackdropWrapper}.closed & {
     display: none;
   }
 `;
@@ -132,7 +132,7 @@ export const BackdropContent = styledComponents<any>('div').attrs(props => ({
   padding: 0 16px 16px 16px;
   width: 100%;
 
-  ${ BackdropWrapper }.closed & {
+  ${BackdropWrapper}.closed & {
     display: none;
   }
 `;
@@ -144,7 +144,7 @@ export const BackdropFooter = styledComponents<any>('div').attrs(props => ({
   height: 60px;
   width: 100%;
 
-  ${ BackdropWrapper }.closed & {
+  ${BackdropWrapper}.closed & {
     display: none;
   }
 

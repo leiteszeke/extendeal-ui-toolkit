@@ -22,7 +22,7 @@ export const Item = styledComponents<any>('li').attrs(props => ({
   width: 100%;
 
   &:hover {
-    background: ${ props => props.color.level3 };
+    background: ${props => props.color.level3};
   }
 `;
 
@@ -30,7 +30,7 @@ export const Separator = styledComponents<any>('hr').attrs(props => ({
   className: props.classes,
 }))`
   border: 0;
-  border-top: 1px solid ${ Beavis.level8 };
+  border-top: 1px solid ${Beavis.level8};
   margin: 8px 0;
   padding: 0;
 `;

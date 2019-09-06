@@ -12,7 +12,7 @@ import {
   StyledLabel,
 } from './InputFieldStyle';
 
-const InputField = (props: InputFieldProps) =>  {
+const InputField = (props: InputFieldProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     id,
@@ -33,39 +33,32 @@ const InputField = (props: InputFieldProps) =>  {
   };
 
   const Label = placeHolder && (
-    <StyledLabel classes={ classes.label }>
-      { placeHolder }
-    </StyledLabel>
+    <StyledLabel classes={classes.label}>{placeHolder}</StyledLabel>
   );
 
   const HelpText = helpText && (
-    <HelperText classes={ classes.helperText }>
-      { helpText }
-    </HelperText>
+    <HelperText classes={classes.helperText}>{helpText}</HelperText>
   );
 
   return (
-    <GroupDiv classes={ classes.div }>
+    <GroupDiv classes={classes.div}>
       <StyledInput
-        classes={ classes.input }
-        color={ color }
-        id={ id }
-        name={ name }
-        onChange={ handleOnChange }
-        value={ value }
+        classes={classes.input}
+        color={color}
+        id={id}
+        name={name}
+        onChange={handleOnChange}
+        value={value}
         required
-        width={ width }
+        width={width}
       />
       <Bar
-        classes={ classnames(
-          'bar',
-          classes.bar,
-        )}
-        color={ color }
-        width={ width }
+        classes={classnames('bar', classes.bar)}
+        color={color}
+        width={width}
       />
-      { Label }
-      { HelpText }
+      {Label}
+      {HelpText}
     </GroupDiv>
   );
 };

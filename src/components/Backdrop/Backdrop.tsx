@@ -89,82 +89,66 @@ const Backdrop = (props: BackdropProps) => {
     ];
   }
 
-  return (
-    createPortal(
-      <React.Fragment>
-        <Overlay classes={ classnames({ opened }, classes.overlay) } />
-        <BackdropWrapper
-          classes={
-            classnames(
-              {
-                headless,
-                closed: opened === false,
-              },
-              classes.wrapper,
-            )
-          }
-        >
-          <BackdropHeader onClick={ handleOpen }>
-              <Title>{ title }</Title>
-
-                {
-                  closable === true
-                  && opened === true
-                  && <CircleClose fillColor={ Colors.Gray.S800 } onClick={ handleClose } />
-                }
-
-                {
-                  browser.isDesktop() === false
-                  && opened === false
-                  && headless !== true
-                  && (
-                    <ArrowUp
-                      onClick={ handleOpen }
-                      fillColor={ Colors.Gray.S800 }
-                      height={ 16 }
-                      width={ 16 }
-                    />
-                  )
-                }
-
-                {
-                  browser.isDesktop() === true
-                  && opened === false
-                  && headless !== false
-                  && (
-                    <Back
-                      onClick={ handleOpen }
-                      fillColor={ Colors.Gray.S800 }
-                      height={ 16 }
-                      width={ 16 }
-                    />
-                  )
-                }
-            </BackdropHeader>
-
+  return createPortal(
+    <React.Fragment>
+      <Overlay classes={classnames({ opened }, classes.overlay)} />
+      <BackdropWrapper
+        classes={classnames(
           {
-            React.isValidElement(content)
-            ? (
-              <BackdropContent classes={ classes.content }>
-                { content }
-              </BackdropContent>
-            )
-            : <Content classes={ classes } { ...content } />
-          }
-        </BackdropWrapper>
+            headless,
+            closed: opened === false,
+          },
+          classes.wrapper,
+        )}
+      >
+        <BackdropHeader onClick={handleOpen}>
+          <Title>{title}</Title>
 
-        { typeof dialog !== 'undefined' &&
-          <SingleDialog
-            classes={ dialog.classes }
-            footerButtons={ dialog.footerButtons }
-            text={ dialog.text }
-            title={ dialog.title }
-            show={ dialog.show }
-          />
-        }
-      </React.Fragment>,
-      portal,
-    )
+          {closable === true && opened === true && (
+            <CircleClose fillColor={Colors.Gray.S800} onClick={handleClose} />
+          )}
+
+          {browser.isDesktop() === false &&
+            opened === false &&
+            headless !== true && (
+              <ArrowUp
+                onClick={handleOpen}
+                fillColor={Colors.Gray.S800}
+                height={16}
+                width={16}
+              />
+            )}
+
+          {browser.isDesktop() === true &&
+            opened === false &&
+            headless !== false && (
+              <Back
+                onClick={handleOpen}
+                fillColor={Colors.Gray.S800}
+                height={16}
+                width={16}
+              />
+            )}
+        </BackdropHeader>
+
+        {React.isValidElement(content) ? (
+          <BackdropContent classes={classes.content}>{content}</BackdropContent>
+        ) : (
+          <Content classes={classes} {...content} />
+        )}
+      </BackdropWrapper>
+
+      {typeof dialog !== 'undefined' && (
+        <SingleDialog
+          classes={dialog.classes}
+          footerButtons={dialog.footerButtons}
+          text={dialog.text}
+          title={dialog.title}
+          show={dialog.show}
+        />
+      )}
+    </React.Fragment>,
+    portal,
   );
 };
 

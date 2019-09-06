@@ -5,20 +5,12 @@ import AnimateHeight from 'react-animate-height';
 // Props
 import { HeightProps } from './HeightProps';
 
-const Height = (props:HeightProps) => {
-  const {
-    children,
-    classes,
-    timeout,
-  } = props;
+const Height = (props: HeightProps) => {
+  const { children, classes, timeout } = props;
 
   return (
-    <AnimateHeight
-      className={ classes }
-      duration={ timeout || 600 }
-      {...props}
-    >
-      { children }
+    <AnimateHeight className={classes} duration={timeout || 600} {...props}>
+      {children}
     </AnimateHeight>
   );
 };

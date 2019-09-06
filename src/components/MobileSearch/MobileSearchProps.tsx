@@ -1,5 +1,5 @@
 export interface MobileSearchProps {
-  classes?: {
+  classes?: {
     leftIcon?: string;
     iconWrapper?: string;
     input?: string;
@@ -17,7 +17,7 @@ export interface MobileSearchProps {
 }
 
 export const defaultProps = {
-  classes: {
+  classes: {
     leftIcon: '',
     iconWrapper: '',
     input: '',

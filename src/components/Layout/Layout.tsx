@@ -9,7 +9,7 @@ import { LayoutProps, defaultProps } from './LayoutProps';
 // Styled
 import { Section, Content } from './LayoutStyle';
 
-const Layout = (props:LayoutProps) => {
+const Layout = (props: LayoutProps) => {
   const componentProps = { ...defaultProps, ...props };
   const {
     breadcrumb,
@@ -42,7 +42,7 @@ const Layout = (props:LayoutProps) => {
     }
   };
 
-  const handleOnSearchChange = (value:string) => {
+  const handleOnSearchChange = (value: string) => {
     if (typeof onSearchChange === 'function') {
       onSearchChange(value);
     }
@@ -68,43 +68,38 @@ const Layout = (props:LayoutProps) => {
 
   return (
     <React.Fragment>
-      <Section
-        classes={ classes.section }
-        id={ contentId }
-      >
+      <Section classes={classes.section} id={contentId}>
         <Header
-          breadcrumb={ breadcrumb }
-          classes={ classes.header }
-          inputValue={ inputValue }
-          leftIcon={ leftIcon }
-          onChange={ handleOnChange }
-          onSearchChange={ handleOnSearchChange }
-          onSearchClose={ handleOnSearchClose }
-          onSearchDelete={ handleOnSearchDelete }
-          onSearchOpen={ handleOnSearchOpen }
-          searchPlaceholder={ searchPlaceholder }
-          searchValue={ searchValue }
-          showBackButton={ showBackButton }
-          showSearch={ showSearch }
-          showUserPanel={ showUserPanel }
-          willLeave={ willLeave }
-          withSearch={ withSearch }
-          withUserPanel={ withUserPanel }
+          breadcrumb={breadcrumb}
+          classes={classes.header}
+          inputValue={inputValue}
+          leftIcon={leftIcon}
+          onChange={handleOnChange}
+          onSearchChange={handleOnSearchChange}
+          onSearchClose={handleOnSearchClose}
+          onSearchDelete={handleOnSearchDelete}
+          onSearchOpen={handleOnSearchOpen}
+          searchPlaceholder={searchPlaceholder}
+          searchValue={searchValue}
+          showBackButton={showBackButton}
+          showSearch={showSearch}
+          showUserPanel={showUserPanel}
+          willLeave={willLeave}
+          withSearch={withSearch}
+          withUserPanel={withUserPanel}
         />
 
-        <Sidebar
-          classes={ classes.sidebar }
-          currentSection={ contentId }
-        />
+        <Sidebar classes={classes.sidebar} currentSection={contentId} />
 
-        <Content classes={ classes.content }>
-          { show === false
-            ? <Spinner title={ title } loading={ true } relative={ true } />
-            : children
-          }
+        <Content classes={classes.content}>
+          {show === false ? (
+            <Spinner title={title} loading={true} relative={true} />
+          ) : (
+            children
+          )}
         </Content>
       </Section>
-      { outsideContent }
+      {outsideContent}
     </React.Fragment>
   );
 };
