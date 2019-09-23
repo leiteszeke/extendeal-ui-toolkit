@@ -25,7 +25,7 @@
     "url": "git+ssh://git@github.com/leiteszeke/ui-toolkit.git"
   },
   "storybook-deployer": {
-    "gitUsername": "Root Master",
+    "gitUsername": "leiteszeke",
     "gitEmail": "ezequiel@leites.dev",
     "commitMessage": "Deploy Storybook"
   },
