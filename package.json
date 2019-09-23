@@ -17,12 +17,17 @@
     "prettier": "prettier --check ./src/**/*.{js,jsx,ts,tsx}",
     "prettier:fix": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
     "build-storybook": "build-storybook",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages -- --ci --host-token-env-variable=ACCESS_TOKEN"
   },
   "homepage": "https://leiteszeke.github.io/ui-toolkit",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/leiteszeke/ui-toolkit.git"
+  },
+  "storybook-deployer": {
+    "gitUsername": "Root Master",
+    "gitEmail": "ezequiel@leites.dev",
+    "commitMessage": "Deploy Storybook"
   },
   "jest": {
     "moduleFileExtensions": [
