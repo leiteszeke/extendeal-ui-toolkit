@@ -89,6 +89,7 @@
     "@types/react-datepicker": "^2.8.1",
     "@types/react-dom": "^16.0.9",
     "@types/styled-components": "^4.0.3",
+    "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "concurrently": "^4.1.2",
     "eslint": "^6.3.0",
