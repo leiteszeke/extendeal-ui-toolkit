@@ -1,6 +1,6 @@
 {
   "name": "@leiteszeke/ui-toolkit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "UI Toolkit",
   "main": "build/index.js",
   "types": "build/index.d.ts",
@@ -17,17 +17,13 @@
     "prettier:fix": "prettier --write ./src/**/*.{js,jsx,ts,tsx}",
     "storybook": "start-storybook -p 6006",
     "deploy": "cp vercel.json storybook-static && vercel --prod",
-    "build:storybook": "build-storybook"
+    "build:storybook": "build-storybook",
+    "commit": "npx git-cz"
   },
   "homepage": "https://ui-toolkit.vercel.app",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/leiteszeke/ui-toolkit.git"
-  },
-  "storybook-deployer": {
-    "gitUsername": "leiteszeke",
-    "gitEmail": "ezequiel@leites.dev",
-    "commitMessage": "Deploy Storybook"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -87,7 +83,6 @@
     "@storybook/addon-links": "^6.0.21",
     "@storybook/addons": "^6.0.21",
     "@storybook/react": "^6.0.21",
-    "@storybook/storybook-deployer": "^2.8.6",
     "@types/classnames": "^2.2.10",
     "@types/jest": "^26.0.13",
     "@types/node": "^14.6.4",
@@ -98,7 +93,9 @@
     "@types/styled-components": "^4.0.3",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
+    "babel-plugin-module-resolver": "^3.2.0",
     "concurrently": "^4.1.2",
+    "cz-conventional-changelog": "3.0.2",
     "eslint": "^6.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
@@ -125,6 +122,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@storybook/theming": "^5.2.6",
     "core-js": "3",
     "moment": "^2.24.0",
     "react-animate-height": "^2.0.15",
@@ -135,5 +133,10 @@
   "peerDependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

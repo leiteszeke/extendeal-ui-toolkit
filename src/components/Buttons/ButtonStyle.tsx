@@ -20,7 +20,7 @@ export const ButtonWrapper = styledComponents<any>('button').attrs(props => ({
   cursor: pointer;
   font-size: 14px;
   height: 36px;
-  line-height: 36px;
+  line-height: 34px;
   outline: none;
   padding: 0 16px;
   text-transform: uppercase;
